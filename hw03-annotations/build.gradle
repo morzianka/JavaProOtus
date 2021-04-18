@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+version '0.0.1'
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.12.0'
+}
