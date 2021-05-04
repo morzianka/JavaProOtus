@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow'
+}
+
+version '0.0.1'
+
+dependencies {
+    implementation group: 'org.ow2.asm', name: 'asm-commons', version: '9.1'
+}
+
+task shadowProxyDemo(type: Jar, dependsOn: shadowJar) {
+    archiveBaseName.set('proxyDemo')
+    manifest {
+        attributes 'Main-Class': 'ru.otus.pro.ProxyDemo'
+        attributes 'Premain-Class': 'ru.otus.pro.Agent'
+    }
+    from zipTree(shadowJar.archiveFile)
+}
+
+tasks.build.dependsOn tasks.shadowProxyDemo
