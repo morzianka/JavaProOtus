@@ -18,7 +18,7 @@ public class ObjectForMessage {
                 .data(data);
     }
 
-    public List<String> getData() {
+    public Iterable<String> getData() {
         return data;
     }
 

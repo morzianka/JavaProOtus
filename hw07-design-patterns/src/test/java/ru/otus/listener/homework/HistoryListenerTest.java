@@ -11,10 +11,12 @@ import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 
 class HistoryListenerTest {
 
+    private final MessageRepository messageRepository = new MessageRepositoryImpl();
+
     @Test
     void ListenerTest() {
         //given
-        var historyListener = new HistoryListener();
+        var historyListener = new HistoryListener(messageRepository);
 
         var id = 100L;
         var data = "33";

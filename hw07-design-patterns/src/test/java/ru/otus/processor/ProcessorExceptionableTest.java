@@ -11,9 +11,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ProcessorExceptionableTest {
 
-    static final long ID = 1;
+    private static final long ID = 1;
 
-    Processor processor = new ProcessorExceptionable();
+    private final Processor processor = new ProcessorExceptionable();
 
     @Test
     void process() {
