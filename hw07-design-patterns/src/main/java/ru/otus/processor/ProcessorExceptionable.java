@@ -2,6 +2,7 @@ package ru.otus.processor;
 
 import ru.otus.model.Message;
 
+import java.time.Clock;
 import java.time.LocalDateTime;
 
 /**
@@ -9,10 +10,15 @@ import java.time.LocalDateTime;
  */
 public class ProcessorExceptionable implements Processor {
 
+    private final Clock clock;
+
+    public ProcessorExceptionable(Clock clock) {
+        this.clock = clock;
+    }
+
     @Override
     public Message process(Message message) {
-        int second = LocalDateTime.parse(message.getField11()).getSecond();
-        if (second % 2 == 0) {
+        if (LocalDateTime.now(clock).getSecond() % 2 == 0) {
             throw new RuntimeException("Чётная секунда!");
         }
         return message;
