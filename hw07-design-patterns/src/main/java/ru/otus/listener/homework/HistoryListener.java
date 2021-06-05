@@ -15,7 +15,7 @@ public class HistoryListener implements Listener, HistoryReader {
 
     @Override
     public void onUpdated(Message msg) {
-        messageRepository.add(msg);
+        messageRepository.add(new Message(msg));
     }
 
     @Override

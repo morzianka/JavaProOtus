@@ -5,7 +5,10 @@ import ru.otus.model.Message;
 import ru.otus.model.ObjectForMessage;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
 

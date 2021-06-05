@@ -15,7 +15,7 @@ public class MessageRepositoryImpl implements MessageRepository {
 
     @Override
     public void add(Message msg) {
-        messages.putIfAbsent(msg.getId(), msg.toBuilder().build());
+        messages.putIfAbsent(msg.getId(), msg);
     }
 
     @Override
