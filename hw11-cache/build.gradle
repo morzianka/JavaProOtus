@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'java.pro.otus'
+version '0.0.1'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.7.Final'
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.4'
+}
+
+test {
+}
