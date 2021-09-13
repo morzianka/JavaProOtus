@@ -6,4 +6,4 @@ include 'hw04-gc'
 include 'hw05-asm'
 include 'hw06-atm'
 include 'hw09-jdbc'
-
+include 'hw10-hibernate'

@@ -2,19 +2,26 @@ plugins {
     id 'java'
 }
 
-group 'java.pro.otus'
-version '0.0.1'
-
-repositories {
-    mavenCentral()
-}
-
 dependencies {
     implementation group: 'org.flywaydb', name: 'flyway-core', version: '7.11.3'
     implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.23'
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.5.7.Final'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.4'
 }
 
 test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.with {
+        encoding = 'UTF-8'
+    }
 }
