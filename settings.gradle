@@ -7,3 +7,5 @@ include 'hw05-asm'
 include 'hw06-atm'
 include 'hw09-jdbc'
 include 'hw10-hibernate'
+include 'hw11-cache'
+
