@@ -1,0 +1,37 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Пользователи</title>
+
+</head>
+
+<body>
+<h4>Добавить пользователя</h4>
+<form action="/client" method="post">
+    <p><input placeholder="Name" type="text" name="name"></p>
+    <p><input placeholder="Login" type="text" name="login"></p>
+    <p><input placeholder="Password" type="text" name="password"></p>
+    <p><input type="submit" value="Отправить"></p>
+</form>
+<h4>Список всех пользователей</h4>
+<table style="width: 400px">
+    <thead>
+    <tr>
+        <td style="width: 50px">Id</td>
+        <td style="width: 150px">Имя</td>
+        <td style="width: 100px">Логин</td>
+        <td style="width: 100px">Пароль</td>
+    </tr>
+    </thead>
+    <tbody>
+    <#list clients as client>
+    <tr>
+        <td>${client.id}</td>
+        <td>${client.name}</td>
+        <td>${client.login}</td>
+        <td>${client.password}</td>
+    </tr>
+    </#list>
+    </tbody>
+</table>
+</body>
+</html>

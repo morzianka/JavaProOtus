@@ -1,0 +1,1 @@
+insert into client (id, name, login, password) values (-1, 'admin', 'admin', '11111');
