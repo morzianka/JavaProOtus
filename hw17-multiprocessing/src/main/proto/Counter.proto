@@ -1,0 +1,16 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package ru.otus.grpc;
+
+message CounterRq {
+  int32 start = 1;
+  int32 end = 2;
+}
+
+message CounterRs {
+  int32 result = 1;
+}
+
+service CounterService {
+  rpc count(CounterRq) returns (stream CounterRs);
+}

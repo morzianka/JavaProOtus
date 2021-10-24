@@ -1,0 +1,9 @@
+grpc:
+  client:
+    counterService:
+      address: localhost:9090
+      NegotiationType: PLAINTEXT
+  server:
+    permit-keep-alive-without-calls: true
+    enable-keep-alive: true
+
